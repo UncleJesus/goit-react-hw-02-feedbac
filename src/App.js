@@ -15,9 +15,8 @@ class App extends Component {
     bad: 0,
   };
 
-  countFeedbacks = (element) => {
-    let key = element.target.textContent.toLowerCase();
-    this.setState((state) => ({ [key]: state[key] + 1 }));
+  countFeedbacks = ({ target }) => {
+    this.setState((state) => ({ [target.name]: state[target.name] + 1 }));
   };
 
   countTotal = (total) =>
